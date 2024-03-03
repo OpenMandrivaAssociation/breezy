@@ -15,6 +15,7 @@ Source0:        https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{na
 Source1:	https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{name}-%{version}.tar.gz.asc
 BuildRequires:  pkgconfig(python)
 BuildRequires:	python-setuptools-gettext
+BuildRequires:	python-setuptools-rust
 BuildRequires:	python-cython
 BuildRequires:	rust
 Requires:	python3dist(fastimport)
