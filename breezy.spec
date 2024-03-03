@@ -16,6 +16,7 @@ Source1:	https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{name}-%{v
 BuildRequires:  pkgconfig(python)
 BuildRequires:	python-setuptools-gettext
 BuildRequires:	rust
+Requires:	python3dist(fastimport)
 Provides:	bzr
 Obsoletes:	bzr < 3
 
