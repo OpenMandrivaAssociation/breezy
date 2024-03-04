@@ -2,6 +2,7 @@
 # TODO
 # split the tools from main package ?
 # split the doc ?
+%define use_bundled_pyo3 1
 %define short_ver %(echo %{version}|cut -d. -f1,2)
 Name:           breezy
 Epoch:          0
@@ -13,11 +14,13 @@ License:        GPLv2+
 URL:            http://www.breezy-vcs.org/
 Source0:        https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{name}-%{version}.tar.gz
 Source1:	https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{name}-%{version}.tar.gz.asc
+Source2:	pyo3-vendor.tar.xz
 BuildRequires:  pkgconfig(python)
 BuildRequires:	python-setuptools-gettext
 BuildRequires:	python-setuptools-rust
 BuildRequires:	python-cython
 BuildRequires:	rust
+
 Requires:	python3dist(fastimport)
 Provides:	bzr
 Obsoletes:	bzr < 3
@@ -36,6 +39,9 @@ previously have been limited to just the committers to a project.
 	
 find . -name '*_pyx.c' -exec rm \{\} \;
 
+#cargo_prep
+#cargo_generate_buildrequires
+
 %check
 # run test in /tmp to avoid lock problems with nfs on build cluster
 # sadely, it's not enough: bzr tests are trying to rebuild bzr, and
@@ -52,6 +58,23 @@ export TMPDIR=/tmp
 #./brz selftest
 
 %build
+
+%if 0%{?use_bundled_pyo3}
+mkdir -p my_rust_vendor
+cd my_rust_vendor
+%{__tar} xf %{SOURCE2}
+mkdir -p ../.cargo 
+cat > ../.cargo/config <<EOL
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "$(pwd)" 
+EOL
+
+cd -
+%endif
+
 %py_build
 %make_build man1/brz.1
 

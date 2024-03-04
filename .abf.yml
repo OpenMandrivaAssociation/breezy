@@ -1,3 +1,4 @@
 sources:
   breezy-3.3.5.tar.gz: cce4a7641b814c0b804ccc687dd620877bbca198
   breezy-3.3.5.tar.gz.asc: f7f78c73ace9dfa966957414e6ff3c68e202bef5
+  pyo3-vendor.tar.xz: a24837e0291f9cbac009dd6d2c44581a880d5a46
