@@ -20,6 +20,7 @@ BuildRequires:	python-setuptools-gettext
 BuildRequires:	python-setuptools-rust
 BuildRequires:	python-cython
 BuildRequires:	python-configobj
+BuildRequires:	python-pyyaml
 BuildRequires:	rust
 
 Requires:	python3dist(fastimport)
