@@ -19,6 +19,7 @@ BuildRequires:  pkgconfig(python)
 BuildRequires:	python-setuptools-gettext
 BuildRequires:	python-setuptools-rust
 BuildRequires:	python-cython
+BuildRequires:	python-configobj
 BuildRequires:	rust
 
 Requires:	python3dist(fastimport)
