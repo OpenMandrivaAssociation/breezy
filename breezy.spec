@@ -11,7 +11,7 @@ Release:        1
 Summary:        Next-generation distributed version control
 Group:          Development/Other
 License:        GPLv2+
-URL:            http://www.breezy-vcs.org/
+URL:            https://www.breezy-vcs.org/
 Source0:        https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{name}-%{version}.tar.gz
 Source1:	https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{name}-%{version}.tar.gz.asc
 Source2:	pyo3-vendor.tar.xz
