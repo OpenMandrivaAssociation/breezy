@@ -7,7 +7,7 @@
 Name:           breezy
 Epoch:          0
 Version:        3.3.5
-Release:        1
+Release:        2
 Summary:        Next-generation distributed version control
 Group:          Development/Other
 License:        GPLv2+
