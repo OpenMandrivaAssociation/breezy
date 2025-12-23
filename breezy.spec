@@ -17,14 +17,15 @@ Source1:	https://launchpad.net/brz/%{short_ver}/%{version}/+download/%{name}-%{v
 Source2:	pyo3-vendor.tar.xz
 BuildRequires:	gettext
 BuildRequires:  pkgconfig(python)
-BuildRequires:	python-setuptools-gettext
-BuildRequires:	python-setuptools-rust
-BuildRequires:	python-cython
-BuildRequires:	python-configobj
-BuildRequires:	python-pyyaml
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools-gettext)
+BuildRequires:	python%{pyver}dist(setuptools-rust)
+BuildRequires:	python%{pyver}dist(cython)
+BuildRequires:	python%{pyver}dist(configobj)
+BuildRequires:	python%{pyver}dist(pyyaml)
 BuildRequires:	rust
 
-Requires:	python3dist(fastimport)
+Requires:	python%{pyver}dist(dist(fastimport)
 Provides:	bzr
 Obsoletes:	bzr < 3
 
